@@ -1,0 +1,668 @@
+1. Print all prime numbers between 1-100
+for num in range(2, 101):
+ for i in range(2, int(num**0.5)+1):
+ if num % i == 0:
+ break
+ else:
+ print(num)
+2. Generate a Random Number
+import random
+print(random.randint(1, 100))
+3. Find the Area of a Triangle
+a = float(input())
+b = float(input())
+c = float(input())
+s = (a + b + c) / 2
+area = (s*(s-a)*(s-b)*(s-c))**0.5
+print(area)
+Pattern 1: Asterisk Left-Aligned
+for i in range(1, 6):
+ print("*" * i)
+Output:
+*
+**
+***
+****
+*****
+Pattern 2: Alphabet Pyramid (Same Letter)
+for i in range(65, 70):
+ print((chr(i) + " ") * (i - 64))
+Output:
+A
+B B
+C C C
+D D D D
+E E E E E
+Pattern 3: Number Continuation Triangle
+n = 1
+for i in range(1, 6):
+ for j in range(i):
+ print(n, end=" ")
+ n += 1
+ print()
+Output:
+1
+2 3
+4 5 6
+7 8 9 10
+11 12 13 14 15
+Pattern 4: Centered Asterisk Pyramid
+for i in range(1, 6):
+ print(" " * (5 - i) + "* " * i)
+Output:
+ *
+ * *
+ * * *
+* * * *
+* * * * *
+Pattern 5: Number Pyramid
+for i in range(1, 6):
+ print(" " * (5 - i), end="")
+ for j in range(1, i + 1):
+ print(j, end=" ")
+ print()
+Output:
+ 1
+ 1 2
+ 1 2 3
+1 2 3 4
+1 2 3 4 5
+Pattern 6: Alphabet Continuation Triangle
+ch = 65
+for i in range(1, 6):
+ for j in range(i):
+ print(chr(ch), end=" ")
+ ch += 1
+ print()
+Output:
+A
+B C
+D E F
+G H I J
+K L M N O
+List Operations - Part 1
+Create a list and perform following operations on it
+1. Shuffle and print a specified list
+import random
+list1 = [5, 3, 8, 6, 2]
+random.shuffle(list1)
+print(list1)
+2. Multiply all the items in a list
+list1 = [5, 3, 8, 6, 2]
+result = 1
+for i in list1:
+ result *= i
+print(result)
+3. Get the smallest number from a list
+list1 = [5, 3, 8, 6, 2]
+print(min(list1))
+4. Check if a list is empty or not
+empty_list = []
+print(len(empty_list) == 0)
+5. Add a list to the second list
+list1 = [5, 3, 8, 6, 2]
+list2 = ['a', 'b', 'c']
+combined_list = list1 + list2
+print(combined_list)
+List Operations - Part 2
+Create a list and perform following operations on it
+1. Add a list to the second list
+list1 = [10, 20, 30]
+list2 = [40, 50, 60]
+combined = list1 + list2
+print(combined)
+2. Find the second smallest number in a list
+list1 = [8, 3, 5, 1, 9]
+list1.sort()
+print(list1[1])
+3. Get unique values from a list
+list1 = [1, 2, 2, 3, 4, 4, 5]
+unique = list(set(list1))
+print(unique)
+4. Interchange first and last elements in a list
+list1 = [10, 20, 30, 40, 50]
+list1[0], list1[-1] = list1[-1], list1[0]
+print(list1)
+Dictionary Operations – Part 1
+1. Sort a dictionary by value (ascending and descending)
+d = {'a': 3, 'b': 1, 'c': 2}
+asc = dict(sorted(d.items(), key=lambda item: item[1]))
+desc = dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
+print(asc)
+print(desc)
+2. Remove duplicates from the dictionary
+d = {'a': 1, 'b': 2, 'c': 1, 'd': 3}
+unique_dict = {}
+for k, v in d.items():
+ if v not in unique_dict.values():
+ unique_dict[k] = v
+print(unique_dict)
+3. Print all distinct values in a dictionary
+d = {'a': 1, 'b': 2, 'c': 1, 'd': 3}
+print(set(d.values()))
+Dictionary Operations – Part 2
+1. Sort a dictionary by value (ascending and descending)
+d = {'x': 4, 'y': 1, 'z': 3}
+asc = dict(sorted(d.items(), key=lambda item: item[1]))
+desc = dict(sorted(d.items(), key=lambda item: item[1], reverse=True))
+print(asc)
+print(desc)
+2. Map two lists into a dictionary
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+d = dict(zip(keys, values))
+print(d)
+3. Concatenate two dictionaries
+d1 = {'a': 1, 'b': 2}
+d2 = {'c': 3, 'd': 4}
+d3 = {**d1, **d2}
+print(d3)
+4. Print all distinct values in a dictionary
+d = {'a': 1, 'b': 2, 'c': 1, 'd': 3}
+print(set(d.values()))
+general string/list operation
+1. Calculate the length of a string
+s = "Hello World"
+print(len(s))
+2. Count the number of characters (character frequency) in a string
+s = "hello"
+freq = {}
+for char in s:
+ freq[char] = freq.get(char, 0) + 1
+print(freq)
+3. Append new string in the middle of a given string
+s1 = "HelloWorld"
+s2 = "Python"
+mid = len(s1) // 2
+result = s1[:mid] + s2 + s1[mid:]
+print(result)
+4. Take input and display in upper and lower cases
+text = input()
+print(text.upper())
+print(text.lower())
+5. Return the longest word and its length from a list
+def longest_word(words):
+ max_word = max(words, key=len)
+ return max_word, len(max_word)
+words = ["apple", "banana", "cherry", "pineapple"]
+print(longest_word(words))
+tuple operation programs
+1. Create a tuple with different data types
+t = (1, "Hello", 3.14, True)
+print(t)
+2. Get the 4th element from the last element of a tuple
+t = (1, 2, 3, 4, 5, 6)
+print(t[-4])
+3. Convert a tuple to a string
+t = ('H', 'e', 'l', 'l', 'o')
+s = ''.join(t)
+print(s)
+4. Check whether an element exists within a tuple
+t = (1, 2, 3, 4, 5)
+print(3 in t)
+5. Swap two tuples in Python
+t1 = (1, 2, 3)
+t2 = ('a', 'b', 'c')
+t1, t2 = t2, t1
+print(t1)
+print(t2)
+NumPy array operation part-1
+1. Create a 1D array of numbers from 0 to 9
+import numpy as np
+arr = np.arange(10)
+print(arr)
+2. Create a 3×3 NumPy array of all True’s
+import numpy as np
+arr = np.ones((3, 3), dtype=bool)
+print(arr)
+3. Create a 3x3 identity matrix
+import numpy as np
+arr = np.eye(3)
+print(arr)
+4. Extract all odd numbers from an array
+import numpy as np
+arr = np.arange(10)
+odd_numbers = arr[arr % 2 != 0]
+print(odd_numbers)
+NumPy array operation part-2
+1. Replace all odd numbers in the array with -1
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr[arr % 2 != 0] = -1
+print(arr)
+2. Replace all odd numbers in arr with -1 without changing arr
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9])
+arr_copy = arr.copy()
+arr_copy[arr_copy % 2 != 0] = -1
+print(arr_copy)
+3. Stack arrays a and b vertically
+import numpy as np
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+stacked = np.vstack((a, b))
+print(stacked)
+4. From array a, remove all items present in array b
+import numpy as np
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([2, 4])
+result = np.setdiff1d(a, b)
+print(result)
+5. Get the positions where elements of a and b match
+import numpy as np
+a = np.array([1, 2, 3, 4, 5])
+b = np.array([5, 4, 3, 2, 1])
+matches = np.where(a == b)
+print(matches)
+NumPy array operation part-3
+1. Get all items between 5 and 10 from array
+import numpy as np
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+result = arr[(arr > 5) & (arr < 10)]
+print(result)
+2. Reverse the rows of a 2D array arr
+import numpy as np
+arr = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+reversed_arr = arr[::-1]
+print(reversed_arr)
+3. Create a 2D array of shape 5x3 to contain random decimal numbers between 5 and 10
+import numpy as np
+arr = np.random.uniform(5, 10, (5, 3))
+print(arr)
+4. Limit the number of items printed in Python NumPy array a to a maximum of 6
+elements
+import numpy as np
+a = np.arange(100)
+np.set_printoptions(threshold=6)
+print(a)
+lambda function operation part-1
+1. Create a function that takes one argument, and that argument will be multiplied with an
+unknown given number
+multiply_with_unknown = lambda x: x * 5
+print(multiply_with_unknown(10))
+2. Find whether a given string starts with a given character using Lambda
+starts_with = lambda string, char: string.startswith(char)
+print(starts_with("Hello", "H"))
+3. Multiply each number in a list with a given number using lambda functions
+numbers = [1, 2, 3, 4, 5]
+multiply_by = 2
+result = list(map(lambda x: x * multiply_by, numbers))
+print(result)
+lambda function operation part-2
+1. Find the intersection of two given arrays using Lambda
+array1 = [1, 2, 3, 4, 5]
+array2 = [4, 5, 6, 7, 8]
+intersection = list(filter(lambda x: x in array2, array1))
+print(intersection)
+2. Count the even and odd numbers in a given array of integers using Lambda
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_count = len(list(filter(lambda x: x % 2 == 0, arr)))
+odd_count = len(list(filter(lambda x: x % 2 != 0, arr)))
+print(f"Even numbers: {even_count}, Odd numbers: {odd_count}")
+3. Multiply each number in a list with a given number using lambda functions
+numbers = [1, 2, 3, 4, 5]
+multiply_by = 3
+result = list(map(lambda x: x * multiply_by, numbers))
+print(result)
+Dictionary,list,tuples
+1. Make a dictionary of a list of ‘n’ students
+n = int(input("Enter the number of students: "))
+students = {}
+for i in range(n):
+ name = input(f"Enter name of student {i+1}: ")
+ roll_number = input(f"Enter roll number of student {i+1}: ")
+ students[name] = roll_number
+print(students)
+2. Program with list, tuple, dictionary using built-in methods
+my_list = [1, 2, 3, 4]
+my_list.append(5)
+print(my_list)
+my_tuple = (1, 2, 3, 4)
+print(len(my_tuple))
+my_dict = {'name': 'John', 'age': 25}
+my_dict['city'] = 'New York'
+print(my_dict)
+3. Program to understand Built-in Set and String functions
+my_set = {1, 2, 3, 4}
+my_set.add(5)
+print(my_set)
+my_string = "hello world"
+print(my_string.upper())
+print(my_string.replace('world', 'Python'))
+Array operations , class , constructor
+1. Basic Array operations on 1-D and Multidimensional arrays using NumPy
+import numpy as np
+arr_1d = np.array([1, 2, 3, 4, 5])
+arr_2d = np.array([[1, 2, 3], [4, 5, 6]])
+print(arr_1d + 2)
+print(arr_2d * 2)
+print(np.sum(arr_2d, axis=0))
+2. Implement Employee class
+class Employee:
+ def __init__(self, name, salary):
+ self.name = name
+ self.salary = salary
+
+ def display(self):
+ print(f"Name: {self.name}, Salary: {self.salary}")
+emp = Employee("John", 50000)
+emp.display()
+3. Implement Constructors
+class Person:
+ def __init__(self, name, age):
+ self.name = name
+ self.age = age
+
+ def display(self):
+ print(f"Name: {self.name}, Age: {self.age}")
+person = Person("Alice", 30)
+person.display()
+BIG PROGRAMS
+1. Create User-defined modules/packages and import them in a program
+Create a file named mymodule.py:
+# mymodule.py
+def greet(name):
+ print(f"Hello, {name}!")
+Main program:
+# main.py
+import mymodule
+mymodule.greet("Alice")
+2. Create user-defined multithreaded application with thread synchronization and
+deadlocks
+import threading
+def thread1(lock):
+ with lock:
+ print("Thread 1 is running")
+
+def thread2(lock):
+ with lock:
+ print("Thread 2 is running")
+lock = threading.Lock()
+t1 = threading.Thread(target=thread1, args=(lock,))
+t2 = threading.Thread(target=thread2, args=(lock,))
+t1.start()
+t2.start()
+t1.join()
+t2.join()
+3. Create a menu-driven application which should cover all the builtin exceptions in
+Python
+def divide(a, b):
+ try:
+ result = a / b
+ except ZeroDivisionError:
+ print("Error: Division by Zero!")
+ except TypeError:
+ print("Error: Invalid input types!")
+ else:
+ print(f"Result: {result}")
+def handle_file():
+ try:
+ file = open('nonexistent.txt', 'r')
+ file.close()
+ except FileNotFoundError:
+ print("Error: File not found!")
+while True:
+ print("1. Divide numbers")
+ print("2. Handle file error")
+ choice = int(input("Enter choice: "))
+
+ if choice == 1:
+ a = int(input("Enter numerator: "))
+ b = int(input("Enter denominator: "))
+ divide(a, b)
+ elif choice == 2:
+ handle_file()
+ elif choice == 3:
+ break
+4. Write Python programs to understand different File handling operations. Create file in
+different modes
+file = open('file_write.txt', 'w')
+file.write("This is a file written in write mode.\n")
+file.close()
+file = open('file_append.txt', 'a')
+file.write("This is content added in append mode.\n")
+file.close()
+file = open('file_read.txt', 'r')
+print(file.read())
+file.close()
+file = open('file_w_plus.txt', 'w+')
+file.write("This is written in w+ mode.\n")
+file.seek(0)
+print(file.read())
+file.close()
+file = open('file_a_plus.txt', 'a+')
+file.write("This is content added in a+ mode.\n")
+file.seek(0)
+print(file.read())
+file.close()
+file = open('image.jpg', 'rb')
+print(file.read(10))
+file.close()
+file = open('image_copy.jpg', 'wb')
+file.write(b'This is a binary write example')
+file.close()
+5. Write Python programs to design a registration page using built-in tools in Python
+(Tkinter, PyQt, Kivy etc.)
+import tkinter as tk
+def submit():
+ print(f"Name: {entry_name.get()}")
+ print(f"Email: {entry_email.get()}")
+root = tk.Tk()
+root.title("Registration Form")
+label_name = tk.Label(root, text="Name")
+label_name.pack()
+entry_name = tk.Entry(root)
+entry_name.pack()
+label_email = tk.Label(root, text="Email")
+label_email.pack()
+entry_email = tk.Entry(root)
+entry_email.pack()
+submit_button = tk.Button(root, text="Submit", command=submit)
+submit_button.pack()
+root.mainloop()
+6. Write Python programs to design a calculator page using built-in tools in Python
+(Tkinter, PyQt, Kivy etc.)
+import tkinter as tk
+def click_button(value):
+ current = entry.get()
+ entry.delete(0, tk.END)
+ entry.insert(0, current + value)
+def calculate():
+ try:
+ result = eval(entry.get())
+ entry.delete(0, tk.END)
+ entry.insert(0, str(result))
+ except:
+ entry.delete(0, tk.END)
+ entry.insert(0, "Error")
+root = tk.Tk()
+root.title("Calculator")
+entry = tk.Entry(root)
+entry.grid(row=0, column=0, columnspan=4)
+buttons = [
+ ('7', 1, 0), ('8', 1, 1), ('9', 1, 2),
+ ('4', 2, 0), ('5', 2, 1), ('6', 2, 2),
+ ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('0', 4, 1),
+ ('+', 1, 3), ('-', 2, 3), ('*', 3, 3), ('/', 4, 3),
+ ('=', 4, 2), ('C', 4, 0)
+]
+for (text, row, col) in buttons:
+ button = tk.Button(root, text=text, command=lambda t=text: click_button(t) if t !=
+'=' else calculate())
+ button.grid(row=row, column=col)
+root.mainloop()
+7. Write Python programs to design Login page using built-in tools in Python (Tkinter,
+PyQt, Kivy etc.)
+import tkinter as tk
+def login():
+ if entry_user.get() == "admin" and entry_pass.get() == "password":
+ label_status.config(text="Login successful")
+ else:
+ label_status.config(text="Invalid credentials")
+root = tk.Tk()
+root.title("Login Page")
+label_user = tk.Label(root, text="Username")
+label_user.pack()
+entry_user = tk.Entry(root)
+entry_user.pack()
+label_pass = tk.Label(root, text="Password")
+label_pass.pack()
+entry_pass = tk.Entry(root, show="*")
+entry_pass.pack()
+login_button = tk.Button(root, text="Login", command=login)
+login_button.pack()
+label_status = tk.Label(root, text="")
+label_status.pack()
+root.mainloop()
+8. Write Python programs to perform CRUD operations in Python (Use any one database
+like SQLite, MySQL, Oracle, PostgreSQL etc.)
+import sqlite3
+conn = sqlite3.connect('test.db')
+cursor = conn.cursor()
+# Create table
+cursor.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name
+TEXT)''')
+# Insert a record
+cursor.execute("INSERT INTO users (name) VALUES ('John')")
+conn.commit()
+# Read records
+cursor.execute("SELECT * FROM users")
+print(cursor.fetchall())
+# Update a record
+cursor.execute("UPDATE users SET name = 'Jane' WHERE id = 1")
+conn.commit()
+# Delete a record
+cursor.execute("DELETE FROM users WHERE id = 1")
+conn.commit()
+conn.close()
+9. Consider any dataset and draw different types of plots using Numpy and Matplotlib
+import numpy as np
+import matplotlib.pyplot as plt
+# Data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+# Line plot
+plt.plot(x, y)
+plt.title("Sine Wave")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+# Scatter plot
+plt.scatter(x, y)
+plt.title("Sine Wave - Scatter")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+# Bar plot
+y2 = np.cos(x)
+plt.bar(x[:10], y2[:10])
+plt.title("Cosine Bar Plot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+USING PANDAS PART-1
+import pandas as pd
+# 1. Generate the series of dates from 1st May, 2021 to 12th May, 2021 (both inclusive)
+dates = pd.date_range(start='2021-05-01', end='2021-05-12')
+print(dates)
+# 2. Apply the function, f(x) = x/2 on each and every element of a given pandas series
+series = pd.Series([2, 4, 6, 8, 10])
+result = series.apply(lambda x: x / 2)
+print(result)
+# 3. Given a dictionary, convert it into corresponding dataframe and display it
+data_dict = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+df_from_dict = pd.DataFrame(data_dict)
+print(df_from_dict)
+# 4. Given a 2D List, convert it into corresponding dataframe and display it
+data_list = [[1, 'Alice', 25], [2, 'Bob', 30], [3, 'Charlie', 35]]
+df_from_list = pd.DataFrame(data_list, columns=['ID', 'Name', 'Age'])
+print(df_from_list)
+# 5. Given a CSV file, read it into a dataframe and display it
+df_from_csv = pd.read_csv('your_file.csv')
+print(df_from_csv)
+USING PANDAS PART-2
+import pandas as pd
+# 1. Given a dataframe, change the index of a dataframe from the default indexes to a
+particular column
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+df = pd.DataFrame(data)
+df.set_index('Name', inplace=True)
+print(df)
+# 2. Given a dataframe (say, with custom indexing), sort it by its index
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+df = pd.DataFrame(data)
+df.set_index('Name', inplace=True)
+df.sort_index(inplace=True)
+print(df)
+# 3. Given a dataframe, sort it by multiple columns
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35], 'Score': [85, 90,
+88]}
+df = pd.DataFrame(data)
+df.sort_values(by=['Age', 'Score'], ascending=[True, False], inplace=True)
+print(df)
+# 4. Given a dataframe, select a particular column and display it
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+df = pd.DataFrame(data)
+print(df['Name'])
+# 5. Given a dataframe, select the first 2 rows and output them
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+df = pd.DataFrame(data)
+print(df.head(2))
+# 6. Given a dataframe, select rows based on a condition
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+df = pd.DataFrame(data)
+print(df[df['Age'] > 30])
+USING PANDAS PART-3
+import pandas as pd
+import numpy as np
+# 1. Given is a dataframe showing name, occupation, salary of people. Find the average
+salary per occupation
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+ 'Occupation': ['Engineer', 'Doctor', 'Engineer', 'Doctor', 'Engineer'],
+ 'Salary': [70000, 80000, 75000, 85000, 72000]}
+df = pd.DataFrame(data)
+avg_salary_per_occupation = df.groupby('Occupation')['Salary'].mean()
+print(avg_salary_per_occupation)
+# 2. Given a dataframe with NaN Values, fill the NaN values with 0
+data_with_nan = {'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Eve'],
+ 'Salary': [70000, np.nan, 75000, np.nan, 72000]}
+df_with_nan = pd.DataFrame(data_with_nan)
+df_with_nan.fillna(0, inplace=True)
+print(df_with_nan)
+# 3. Given is a dataframe showing Company Names (cname) and corresponding Profits
+(profit).
+# Convert the values of Profit column such that values in it greater than 0 are set to
+True and the rest are set to False
+data_profit = {'cname': ['Company A', 'Company B', 'Company C', 'Company D'],
+ 'profit': [20000, -5000, 15000, 0]}
+df_profit = pd.DataFrame(data_profit)
+df_profit['profit'] = df_profit['profit'] > 0
+print(df_profit)
+USING PANDAS PART-4
+1. Given are 2 dataframes, with one dataframe containing Employee ID (eid), Employee
+Name (ename) and Stipend (stipend)
+and the other dataframe containing Employee ID (eid) and designation of the
+employee(designation).
+Output the DataFrame containing Employee ID (eid), Employee Name (ename),
+Stipend(stipend) and Position (position).
+Code 
+import pandas as pd
+df_employee = pd.DataFrame({
+ 'eid': [1, 2, 3],
+ 'ename': ['Alice', 'Bob', 'Charlie'],
+ 'stipend': [5000, 6000, 7000]
+})
+df_designation = pd.DataFrame({
+ 'eid': [1, 2, 3],
+ 'designation': ['Manager', 'Developer', 'Analyst']
+})
+result = pd.merge(df_employee, df_designation, on='eid')
+print(result)
+# 2. Given a dataframe, generate the statistical summary of all the numerical features
+present in it
+Code
+data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35], 'Salary': [50000,
+60000, 70000]}
+df = pd.DataFrame(data)
+stat_summary = df.describe()
+print(stat_summary)
